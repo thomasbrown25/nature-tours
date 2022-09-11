@@ -1,0 +1,48 @@
+/* Header */
+.header {
+    height: 85vh;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)
+        ),
+        url('../../assets/img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+    /* Logo */
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+        transition-duration: 0.2s;
+
+        &:hover {
+            transform: translate(-0.2rem, -0.2rem);
+            cursor: pointer;
+        }
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+    /* end of Logo */
+
+    /* text-box */
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    /* end of text-box */
+}
+/* end of header */
